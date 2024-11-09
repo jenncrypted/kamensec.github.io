@@ -1,0 +1,74 @@
+[
+  {
+    "skills": ["Solidity"],
+    "title": "MetaLex Labs, Inc",
+    "description": "Metavest contracts",
+    "source": "https://github.com/Zellic/publications/blob/master/Metavest%20-%20Zellic%20Audit%20Report.pdf"
+  },
+  {
+    "skills": ["Solidity"],
+    "title": "Lyra Finance",
+    "description": "TSA Modules",
+    "source": "https://github.com/sigp/public-audits/blob/master/reports/lyra-finance/v2-matching/review.pdf"
+  },
+  {
+    "skills": ["Solidity"],
+    "title": "Renzo",
+    "description": "Staking Contracts",
+    "source": "https://github.com/sigp/public-audits/blob/master/reports/renzo/review.pdf"
+  },
+  {
+    "skills": ["Solidity"],
+    "title": "EigenLayer",
+    "description": "M2 Core",
+    "source": "https://github.com/sigp/public-audits/blob/master/reports/eigen-layer-3/review.pdf"
+  },
+  {
+    "skills": ["Solidity"],
+    "title": "RocketPool",
+    "description": "Houston Upgrade",
+    "source": "https://github.com/sigp/public-audits/blob/master/reports/rocket-pool/rocket-pool-8-houston-pdao/review.pdf"
+  },
+  {
+    "skills": ["Solidity"],
+    "title": "Lyra Finance",
+    "description": "V2-Core & V2-Matching",
+    "source": "https://github.com/sigp/public-audits/blob/master/reports/lyra-finance/review.pdf"
+  },
+  {
+    "skills": ["Solidity"],
+    "title": "EigenLayer",
+    "description": "Core (diff audit)",
+    "source": "https://github.com/sigp/public-audits/blob/master/reports/eigen-layer-2/review.pdf"
+  },
+  {
+    "skills": ["Solidity"],
+    "title": "Satori Sports",
+    "description": "Satori Tokens & Royalties",
+    "source": "https://github.com/sigp/public-audits/blob/master/reports/satori-sports/satori-sports-token-royalties/review.pdf"
+  },
+  {
+    "skills": ["Solidity"],
+    "title": "DXdao",
+    "description": "Carrot Eth & ERC20 Guild",
+    "source": "https://github.com/sigp/public-audits/blob/master/reports/dxdao/carrot-kpi/review.pdf"
+  },
+  {
+    "skills": ["Solidity"],
+    "title": "Sushi Wrap",
+    "description": "Bento Box & Staking Contracts",
+    "source": "https://github.com/sigp/public-audits/blob/master/reports/sushi/bentobox-strategies-staking-contract/review.pdf"
+  },
+  {
+    "skills": ["Solidity"],
+    "title": "Chainsafe",
+    "description": " Gossamer",
+    "source": "https://github.com/sigp/public-audits/blob/master/reports/chainsafe/gossamer/review.pdf"
+  },
+  {
+    "skills": ["Solidity"],
+    "title": "LinkPool",
+    "description": "Chainlink Keeper Contracts",
+    "source": "https://github.com/sigp/public-audits/blob/master/reports/linkpool/linkpool-2/review.pdf"
+  }
+]

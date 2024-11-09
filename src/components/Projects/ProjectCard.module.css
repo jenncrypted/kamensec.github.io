@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-grey);
+  max-width: 345px;
+  min-width: 260px;
+}
+
+.skills {
+  font-size: 16px;
+  color: var(--color-secondary);
+  border-bottom: 1px solid var(--color-grey);
+}
+
+.title {
+  width: 174px;
+  height: 42px;
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+.title h2::first-letter {
+  color: #00ff41;
+  font-size: 24px;
+}
+
+.title h2 {
+  position: relative;
+  z-index: 1;
+}
+
+h2.linea:before {
+  border-top: 2px solid;
+  content: "";
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 95%;
+  z-index: -1;
+}
+
+.ProjectsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  gap: 50px;
+  border: 1px solid;
+  box-sizing: border-box;
+}
+
+.description {
+  color: var(--color-grey);
+  padding-bottom: 10%;
+  font-size: 13px;
+}
+.grid-item {
+  text-align: left;
+  padding: 20px;
+}
+
+.github {
+  border: 1px solid var(--color-primary);
+  width: 110px;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: none;
+  padding: 4px;
+  margin-bottom: 5%;
+  font-size: 16px;
+  color: white;
+}
+
+.buttonGithub {
+  color: white;
+  border: 1px solid #00ff41;
+  padding: 8px 16px;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.projectTextPadding {
+  padding: 3%;
+}
+
+.linkMargin {
+  margin-bottom: 3%;
+}
+
+.github {
+  font-size: 14px;
+}

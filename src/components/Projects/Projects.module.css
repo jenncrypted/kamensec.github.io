@@ -1,0 +1,70 @@
+@import "../../vars.css";
+
+.container {
+  padding: 2%;
+  margin-top: 76px;
+  color: var(--color-text);
+  overflow: auto;
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.container::first-letter {
+  color: #00ff41;
+}
+
+.title {
+  width: 174px;
+  height: 42px;
+  color: var(--color-text);
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  width: 511px;
+  height: 1px;
+  background-color: var(--color-primary);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  margin-left: 1rem;
+}
+
+/* .projects {
+  margin-top: 37px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+} */
+.projectsContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.projects {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(200px, 1fr));
+  grid-auto-rows: auto;
+  width: 75%;
+  text-align: left;
+  justify-content: center;
+  padding: 2%;
+}
+
+@media (min-width: 853px) {
+  .projects {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+}
+
+@media (min-width: 1221px) {
+  .projects {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+}
