@@ -1,4 +1,16 @@
-[
+[  
+  {
+  "skills": ["Solidity"],
+  "title": "Facet Protocol",
+  "description": "Facet Bridge",
+  "source": "https://github.com/Zellic/publications/blob/master/Facet%20Bridge%20-%20Zellic%20Audit%20Report.pdf"
+  },
+  {
+    "skills": ["Solidity"],
+    "title": "Sanguine Labs, LTD",
+    "description": "Yeet",
+    "source": "https://github.com/Zellic/publications/blob/master/Yeet%20October%20-%20Zellic%20Audit%20Report.pdf"
+  },
   {
     "skills": ["Solidity"],
     "title": "MetaLex Labs, Inc",

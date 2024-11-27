@@ -1,0 +1,178 @@
+[
+    {
+        "platform": "codehawks",
+        "title": "2024-08-tadle",
+        "earnings": 163.08,
+        "date": "Aug 2024",
+        "findings": {
+            "high": [
+                {
+                    "title": "Makers Can Gain Profit By Aborting Trades",
+                    "link": "https://codehawks.cyfrin.io/c/2024-08-tadle/s/1374",
+                    "unique": false
+                },
+                {
+                    "title": "Loss Of Funds Due To Unreachable Allowance Check For Non Native Withdraw Tokens",
+                    "link": "https://codehawks.cyfrin.io/c/2024-08-tadle/s/1568",
+                    "unique": false
+                },
+                {
+                    "title": "Formulaic Error Rounds Down Causing Total Loss Of Funds For Bid Takers During Abort",
+                    "link": "https://codehawks.cyfrin.io/c/2024-08-tadle/s/1504",
+                    "unique": false
+                },
+                {
+                    "title": "Invalid Usage of CapitalPool.approve()",
+                    "link": "https://codehawks.cyfrin.io/c/2024-08-tadle/s/1662",
+                    "unique": false
+                },
+                {
+                    "title": "Unprivileged Erroneous Referrer Updates",
+                    "link": "https://codehawks.cyfrin.io/c/2024-08-tadle/s/1442",
+                    "unique": false
+                }
+            ]
+        }
+    },
+    {
+        "platform": "code4rena",
+        "title": "Wildcat Contest",
+        "earnings": 150.79,
+        "date": "Oct 2022",
+        "findings": {
+            "high": [
+                {
+                    "title": "Lenders can escape the blacklisting of their accounts because they can move their MarketTokens to different accounts and gain the WithdrawOnly Role on any account they want",
+                    "link": "https://github.com/code-423n4/2023-10-wildcat-findings/issues/266",
+                    "unique": false
+                }
+            ],
+            "medium": [
+                {
+                    "title": "setAnnualInterestBips() can be abused to keep a market's reserve ratio at 90%",
+                    "link": "https://github.com/code-423n4/2023-10-wildcat-findings/issues/497",
+                    "unique": false
+                }
+            ]
+        }
+    },
+    {
+        "platform": "code4rena",
+        "title": "Inverse Finance Contest",
+        "earnings": 0.38,
+        "date": "Oct 2022",
+        "findings": {
+            "medium": [
+                {
+                    "title": "Chainlink oracle data feed is not sufficiently validated and can return stale price",
+                    "link": "https://github.com/code-423n4/2022-10-inverse-findings/issues/584",
+                    "unique": false
+                }
+            ]
+        }
+    },
+    {
+        "platform": "code4rena",
+        "title": "Nouns Builder Contest",
+        "earnings": 235.61,
+        "date": "Nov 2021",
+        "findings": {
+            "medium": [
+                {
+                    "title": "Multiple vote checkpoints per block will lead to incorrect vote accounting",
+                    "link": "https://github.com/code-423n4/2022-09-nouns-builder-findings/issues/185",
+                    "unique": false
+                }
+            ]
+        }
+    },
+    {
+        "platform": "code4rena",
+        "title": "Yieldy Contest",
+        "earnings": 599.88,
+        "date": "June 2022",
+        "findings": {
+            "medium": [
+                {
+                    "title": "Rebases can be frontrun with very little token downtime even when warmUpPeriod > 0 ",
+                    "link": "https://github.com/code-423n4/2022-06-yieldy-findings/issues/31",
+                    "unique": false
+                }
+            ]
+        }
+    },
+    {
+        "platform": "code4rena",
+        "title": "Unlock Protocol Contest",
+        "earnings": 5371.28,
+        "date": "Nov 2021",
+        "findings": {
+            "high": [
+                {
+                    "title": "MEV miner can mint larger than expected UDT total supply",
+                    "link": "https://github.com/code-423n4/2021-11-unlock-findings/issues/135",
+                    "unique": true
+                }
+            ],
+            "medium": [
+                {
+                    "title": "Frontrunning `PublicLock.initialize()` can prevent upgrades due to insufficient access control",
+                    "link": "https://github.com/code-423n4/2021-11-unlock-findings/issues/132",
+                    "unique": false
+                }
+            ]
+        }
+    },
+    {
+        "platform": "code4rena",
+        "title": "Vader Contest",
+        "earnings": 716.28,
+        "date": "Nov 2021",
+        "findings": {
+            "medium": [
+                {
+                    "title": "TWAP Oracle inflexible _updatePeriod",
+                    "link": "https://github.com/code-423n4/2021-11-vader-findings/issues/136",
+                    "unique": true
+                }
+            ]
+        }
+    },
+    {
+        "platform": "code4rena",
+        "title": "Boot Finance Contest",
+        "earnings": 615.76,
+        "date": "Nov 2021",
+        "findings": {
+            "high": [
+                {
+                    "title": "Claim airdrop repeatedly",
+                    "link": "https://github.com/code-423n4/2021-11-bootfinance-findings/issues/129",
+                    "unique": false
+                }
+            ],
+            "medium": [
+                {
+                    "title": "No transfer ownership pattern",
+                    "link": "https://github.com/code-423n4/2021-11-bootfinance-findings/issues/111",
+                    "unique": false
+                }
+            ]
+        }
+    },
+    {
+        "platform": "code4rena",
+        "title": "Tally Contest",
+        "earnings": 461.32,
+        "date": "Oct 2021",
+        "findings": {
+            "medium": [
+                {
+                    "title": "Swap.sol implements potentially dangerous transfer",
+                    "link": "https://github.com/code-423n4/2021-10-tally-findings/issues/20",
+                    "unique": false
+                }
+            ]
+        }
+    }
+]
