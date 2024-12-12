@@ -37,7 +37,7 @@
 }
 
 .menuItems li::first-letter {
-  color: #00ff41;
+  color: var(--color-blue-highlight);
 }
 
 .menuBtn {

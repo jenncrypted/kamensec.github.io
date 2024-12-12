@@ -1,26 +1,27 @@
 @import "./vars.css";
 
 .componentContainer {
-  /* width: 10÷0%; */
-  background-color: var(--color-bg-secondary);
-  display: block;
-  width: 90%;
-  height: 100%;
+    /* width: 10÷0%; */
+    background-color: var(--color-bg-secondary);
+    display: block;
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
 }
 
 section {
-  padding: 3%;
+    padding: 3%;
 }
 
 .app {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-bg);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg);
 }
 
 html,
 body {
-  background-color: var(--color-bg);
+    background-color: var(--color-bg);
 }

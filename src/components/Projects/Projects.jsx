@@ -27,7 +27,9 @@ const Projects = () => {
 
   return (
     <section id="works" className={styles.container}>
-      <h2 className={styles.title}>#projects</h2>
+      <h2 className={styles.title}>
+        <span>#</span>projects
+      </h2>
       <div className={styles.projectsContainer}>
         <div className={styles.projects}>
           {/* <Slider ref={sliderRef} {...settings}> */}

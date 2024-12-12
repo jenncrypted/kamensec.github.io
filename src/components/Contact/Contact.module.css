@@ -1,10 +1,11 @@
 @import "../../vars.css";
 
 .contactContainer {
-  height: 30vh;
+  height: 50vh;
   margin-top: 76px;
   color: var(--color-text);
-  overflow: auto;
+  /* overflow: auto; */
+  display: block;
 }
 
 .title {
@@ -25,9 +26,12 @@
   border: 0;
 }
 
+.title h2 > span {
+  color: var(--color-blue-highlight);
+}
+
 .contentInfo {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 20px 100px 100px;
   justify-content: center;
   width: 515px;
   color: var(--color-grey);
@@ -68,22 +72,34 @@
   display: block;
 }
 
-.link {
-  color: var(--color-secondary);
-  margin-left: 10px;
-  display: block;
+.horizontalContactContainer {
+  display: flex;
+  justify-content: space-between;
 }
 
-.link > img {
-  width: 20px;
-  gap: 10px;
-  padding-bottom: 10px;
-  flex-direction: row;
-}
+.formContainer {
+  flex: 0.75;
 
-.link > a {
-  text-decoration: none;
-  color: var(--color-grey);
-  padding-left: 10px;
-  font-weight: 100;
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    input,
+    textarea {
+      padding: 20px;
+      background-color: transparent;
+      border: 1px solid var(--color-secondary);
+      color: white;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 20px;
+      border: none;
+      background-color: var(--color-blue-highlight);
+      cursor: pointer;
+      font-weight: 500;
+    }
+  }
 }

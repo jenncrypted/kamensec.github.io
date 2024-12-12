@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "./Socials.module.css";
-import { getImageUrl } from "../../utils.js";
+// import { getImageUrl } from "../../utils.js";
+import Github from "./Github.svg";
+import Twitter from "./Twitter.svg";
+import Telegram from "./Telegram.svg";
 
 const Socials = () => {
   return (
@@ -10,28 +13,19 @@ const Socials = () => {
       </div>
       <div className={styles.logosSocialMedia}>
         <div>
-          <img
-            className={styles.Github}
-            src={"assets/Github.png"}
-            alt={"Github"}
-          />
-          <a href="https://telegram.me/kamensec" target="_blank"></a>
+          <a href="https://github.com/kamensec" target="_blank">
+            <img src={Github} />
+          </a>
         </div>
         <div>
-          <img
-            className={styles.telegram}
-            src={"assets/telegram.png"}
-            alt={"telegram"}
-          />
-          <a href="https://telegram.me/kamensec" target="_blank"></a>
+          <a href="https://telegram.me/kamensec" target="_blank">
+            <img src={Telegram} />
+          </a>
         </div>
         <div>
-          <img
-            className={styles.twitter}
-            src={"assets/twitter.png"}
-            alt="twitter"
-          />
-          <a href="https://telegram.me/kamensec" target="_blank"></a>
+          <a href="https://x.com/kamensec" target="_blank">
+            <img src={Twitter} />
+          </a>
         </div>
       </div>
     </div>

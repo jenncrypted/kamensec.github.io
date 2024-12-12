@@ -1,7 +1,9 @@
 :root {
   /* colours */
   --color-text: white;
-  --color-primary: #00ff41;
+  --color-primary: #418cc3;
+  --color-blue-highlight: #51aced;
+  --color-blue-shadow: #639bc3;
   --color-secondary: gray;
   --color-grey: #abb2bf;
   --color-bg: #282c33;

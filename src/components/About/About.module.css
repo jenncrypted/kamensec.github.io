@@ -1,67 +1,72 @@
 .aboutContainer {
-  height: 60vh;
-  width: 90%;
+    height: 60vh;
+    width: 90%;
 }
 
 .title {
-  width: 174px;
-  height: 42px;
-  color: var(--color-text);
+    width: 174px;
+    height: 42px;
+    color: var(--color-text);
+}
+
+.title > span {
+    color: var(--color-blue-highlight);
 }
 
 .contentContainer {
-  display: flex;
-  /* height: 70vh; */
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: space-between;
-  color: var(--color-text);
-  z-index: 1;
-  margin-left: 8%;
+    display: flex;
+    /* height: 70vh; */
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-text);
+    z-index: 1;
+    margin-left: 8%;
 }
 
 .title::after {
-  content: "";
-  position: absolute;
-  width: 450px;
-  height: 1px;
-  background-color: var(--color-primary);
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  border: 0;
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 1px;
+    background-color: var(--color-primary);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    border: 0;
 }
 
 .descriptionContainer {
-  padding-top: 30px;
-  justify-content: center;
-  width: 70%;
-  text-align: justify;
-  word-spacing: 1px;
-  line-height: 1.8em;
-  color: var(--color-grey);
+    padding-top: 30px;
+    justify-content: center;
+    width: 70%;
+    text-align: justify;
+    word-spacing: 1px;
+    line-height: 1.8em;
+    color: var(--color-grey);
 }
 
 .descriptionAbout {
-  color: var(--color-grey);
+    color: var(--color-grey);
 }
 
 .aboutHackerWithDots {
-  position: relative;
-  padding: 4%;
+    position: relative;
+    padding: 4%;
 }
 
 .heroImg {
-  z-index: 1;
+    z-index: 1;
+    width: 300px;
 }
-
+/* 
 .dotsBackground {
-  position: absolute;
-  left: -5%;
-  top: 20%;
-  z-index: -1;
-}
-
+    position: absolute;
+    left: -5%;
+    top: 20%;
+    z-index: -1;
+} */
+/* 
 .dotImageBackground {
   z-index: 50;
   width: 170px;
@@ -77,19 +82,21 @@
   left: 70%;
   top: 50%;
   width: 10%;
-}
+} */
 
 @media screen and (max-width: 860px) {
-  .descriptionContainer {
-    font-size: 15px;
-  }
+    .descriptionContainer {
+        font-size: 15px;
+    }
 
-  .dotImageBackground {
-    flex-direction: column;
-  }
+    .dotImageBackground {
+        flex-direction: column;
+        display: none;
+    }
 
-  .heroImg {
-    z-index: 1;
-    position: relative;
-  }
+    .heroImg {
+        z-index: 1;
+        position: relative;
+        display: none;
+    }
 }

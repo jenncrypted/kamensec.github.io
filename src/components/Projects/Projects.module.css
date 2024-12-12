@@ -11,7 +11,7 @@
 }
 
 .container::first-letter {
-  color: #00ff41;
+  color: var(--color-blue-highlight);
 }
 
 .title {
@@ -63,7 +63,7 @@
   }
 }
 
-@media (min-width: 1221px) {
+@media (min-width: 1271px) {
   .projects {
     grid-template-columns: repeat(3, minmax(200px, 1fr));
   }

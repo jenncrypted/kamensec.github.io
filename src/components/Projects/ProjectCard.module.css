@@ -20,7 +20,7 @@
 }
 
 .title h2::first-letter {
-  color: #00ff41;
+  color: var(--color-blue-highlight);
   font-size: 24px;
 }
 
@@ -75,7 +75,7 @@ h2.linea:before {
 
 .buttonGithub {
   color: white;
-  border: 1px solid #00ff41;
+  border: 1px solid var(--color-blue-highlight);
   padding: 8px 16px;
   gap: 10px;
   font-weight: 500;

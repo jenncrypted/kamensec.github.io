@@ -1,147 +1,136 @@
 @import "../../vars.css";
 
-.container {
-  position: relative;
-  align-items: center;
-  z-index: 1;
+.containerNoPadding {
+    position: block;
+    align-items: center;
+    z-index: 1;
+    height: 80vh;
+    width: 80vw;
+    padding-left: 0;
+    padding-top: 1%;
 }
 
+.contentRelativeContainer {
+    display: flex;
+    z-index: 10;
+}
 .content {
-  display: flex;
-  height: 70vh;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: space-between;
-  color: var(--color-text);
-  z-index: 1;
-  margin-left: 8%;
+    display: relative;
+    height: 70vh;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-text);
+    margin-left: 8%;
+    padding-top: 15%;
+    padding-left: 3%;
+    z-index: 100;
 }
 
 .callToAction {
-  left: 100px;
-  text-align: justify;
-  width: 50%;
+    left: 100px;
+    text-align: justify;
+    width: 50%;
 }
 
 .title {
-  font-size: 25px;
-  margin-bottom: 33px;
-  text-align: left;
+    font-size: 25px;
+    margin-bottom: 33px;
+    text-align: left;
 }
 
+.title > span {
+    color: var(--color-blue-highlight);
+}
 .description {
-  font-size: 15px;
-  margin-bottom: 30px;
-  color: var(--color-grey);
-  line-height: 24px;
+    font-size: 15px;
+    margin-bottom: 30px;
+    color: var(--color-grey);
+    line-height: 24px;
 }
 
 .contactBtn {
-  text-decoration: none;
-  background-color: none;
-  color: white;
-  border: 1px solid #00ff41;
-  padding: 8px 16px;
-  gap: 10px;
-  font-weight: 500;
-  font-size: 16px;
+    text-decoration: none;
+    background-color: none;
+    color: white;
+    border: 1px solid var(--color-blue-highlight);
+    padding: 8px 16px;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .scroll-down {
-  height: 50px;
-  width: 30px;
-  border: 2px solid var(--color-grey);
-  position: absolute;
-  left: 50%;
-  bottom: 20px;
-  border-radius: 50px;
-  cursor: pointer;
-  scroll-behavior: smooth;
+    height: 50px;
+    width: 30px;
+    border: 2px solid var(--color-grey);
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    scroll-behavior: smooth;
 }
 
 .scroll-down::before,
 .scroll-down::after {
-  content: "";
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  border: 2px solid var(--color-grey);
-  height: 10px;
-  width: 10px;
-  transform: translate(-50%, -100%) rotate(45deg);
-  border-top: transparent;
-  border-left: transparent;
-  animation: scroll-down 1s ease-in-out infinite;
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    border: 2px solid var(--color-grey);
+    height: 10px;
+    width: 10px;
+    transform: translate(-50%, -100%) rotate(45deg);
+    border-top: transparent;
+    border-left: transparent;
+    animation: scroll-down 1s ease-in-out infinite;
 }
 
 .scroll-down::after {
-  top: 30%;
-  animation-delay: 0.3s;
+    top: 30%;
+    animation-delay: 0.3s;
 }
 
 @keyframes scroll-down {
-  0% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    top: 90%;
-  }
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: 90%;
+    }
 }
 
-.hackerWithLinesAndDotsContainer {
-  position: relative;
-}
-
-.heroImg {
-  z-index: 1;
-}
-
-.heroLines {
-  position: absolute;
-  left: -5%;
-  top: 20%;
-  z-index: -1;
-}
-
-.lineImg {
-  z-index: 50;
-  width: 170px;
-}
-
-.dotImage {
-  position: absolute;
-  left: 70%;
-  top: 50%;
-  width: 25%;
-}
-
+/* Multi Screen Adjustments */
 @media screen and (max-width: 830px) {
-  .container {
-    flex-direction: column-reverse;
-  }
+    .container {
+        flex-direction: column-reverse;
+    }
 
-  .content {
-    align-items: center;
-  }
+    .content {
+        align-items: center;
+    }
 
-  .callToAction {
-    flex-direction: column;
-  }
+    .callToAction {
+        flex-direction: column;
+    }
 
-  .hackerWithLinesAndDotsContainer > img {
-    flex-direction: column;
-  }
+    .hackerWithLinesAndDotsContainer > img {
+        flex-direction: column;
+        display: none;
+    }
 
-  .heroImg {
-    width: 50%;
-    z-index: 1;
-    position: relative;
-  }
+    .rabbitImage {
+        width: 50%;
+        z-index: 1;
+        position: relative;
+        display: none;
+    }
 }

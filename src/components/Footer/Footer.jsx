@@ -2,22 +2,27 @@ import React from "react";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
-  return (
-    <section>
-      <hr />
-      <section>
-        <section className={styles.footerContainer}>
-          <section className={styles.infoName}>
-            Independent Security Researcher
-          </section>
-          <section className={styles.contactInfo}>
-            <a href="mailto:kamensec@proton.me">kamensec@proton.me</a>
-            <br />
-          </section>
+    return (
+        <section>
+            <hr />
+            <div>
+                <div className={styles.footerContainer}>
+                    <div className={styles.infoName}>Made with love</div>
+                    <div className={styles.contactInfo}>
+                        <a
+                            // className={styles.blueText}
+                            href="mailto:kamensec@proton.me"
+                        >
+                            <div className={styles.blueText}>
+                                jenncrypted.io
+                            </div>
+                        </a>
+                        <br />
+                    </div>
+                </div>
+            </div>
         </section>
-      </section>
-    </section>
-  );
+    );
 };
 
 export default Footer;
