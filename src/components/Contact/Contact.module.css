@@ -83,7 +83,7 @@
     form {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 8px;
 
         input,
         textarea {
@@ -101,6 +101,7 @@
             color: white;
             cursor: pointer;
             font-weight: 500;
+            border-radius: 5px;
         }
     }
 }
