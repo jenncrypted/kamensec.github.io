@@ -1,105 +1,106 @@
 @import "../../vars.css";
 
 .contactContainer {
-  height: 50vh;
-  margin-top: 76px;
-  color: var(--color-text);
-  /* overflow: auto; */
-  display: block;
+    height: 50vh;
+    margin-top: 76px;
+    color: var(--color-text);
+    /* overflow: auto; */
+    display: block;
 }
 
 .title {
-  width: 174px;
-  height: 42px;
-  color: var(--color-text);
+    width: 174px;
+    height: 42px;
+    color: var(--color-text);
 }
 
 .title h2::after {
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 1px;
-  background-color: var(--color-primary);
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  border: 0;
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 1px;
+    background-color: var(--color-primary);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    border: 0;
 }
 
 .title h2 > span {
-  color: var(--color-blue-highlight);
+    color: var(--color-blue-highlight);
 }
 
 .contentInfo {
-  padding: 20px 20px 100px 100px;
-  justify-content: center;
-  width: 515px;
-  color: var(--color-grey);
-  line-height: 1.5rem;
+    padding: 20px 20px 100px 100px;
+    justify-content: center;
+    width: 515px;
+    color: var(--color-grey);
+    line-height: 1.5rem;
 }
 
 .contactLinks {
-  margin-left: 800px;
-  margin: 0;
-  width: 100px;
-  background-color: transparent;
-  color: var(--color-secondary);
-  border-radius: 2px;
+    margin-left: 800px;
+    margin: 0;
+    width: 100px;
+    background-color: transparent;
+    color: var(--color-secondary);
+    border-radius: 2px;
 }
 
 .contactLinks {
-  transition-duration: 0.4s;
+    transition-duration: 0.4s;
 }
 
 .contactLinks:hover {
-  background-color: var(--color-grey); /* Green */
-  color: white;
+    background-color: var(--color-grey); /* Green */
+    color: white;
 }
 
 .containerLinks {
-  width: 106px;
-  height: 21px;
-  gap: 30px;
-  opacity: 0px;
-  list-style: none;
-  gap: 25px;
-  padding-bottom: 0px;
-  text-decoration: none;
+    width: 106px;
+    height: 21px;
+    gap: 30px;
+    opacity: 0px;
+    list-style: none;
+    gap: 25px;
+    padding-bottom: 0px;
+    text-decoration: none;
 }
 
 .linksContainer {
-  text-align: right;
-  display: block;
+    text-align: right;
+    display: block;
 }
 
 .horizontalContactContainer {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .formContainer {
-  flex: 0.75;
+    flex: 0.75;
 
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
 
-    input,
-    textarea {
-      padding: 20px;
-      background-color: transparent;
-      border: 1px solid var(--color-secondary);
-      color: white;
-      border-radius: 5px;
+        input,
+        textarea {
+            padding: 20px;
+            background-color: transparent;
+            border: 1px solid var(--color-secondary);
+            color: white;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 20px;
+            border: none;
+            background-color: var(--color-blue-highlight);
+            color: white;
+            cursor: pointer;
+            font-weight: 500;
+        }
     }
-
-    button {
-      padding: 20px;
-      border: none;
-      background-color: var(--color-blue-highlight);
-      cursor: pointer;
-      font-weight: 500;
-    }
-  }
 }
