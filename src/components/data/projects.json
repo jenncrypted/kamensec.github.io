@@ -1,5 +1,11 @@
 [  
   {
+    "skills": ["Solidity"],
+    "title": "Bulla Network",
+    "description": "Bulla Factoring Contracts",
+    "source": "https://github.com/LPHAC/public-reports/blob/main/bulla-1-factoring.pdf"
+  },
+  {
   "skills": ["Solidity"],
   "title": "Facet Protocol",
   "description": "Facet Bridge",
