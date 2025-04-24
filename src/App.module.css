@@ -1,16 +1,17 @@
 @import "./vars.css";
 
 .componentContainer {
-    /* width: 10÷0%; */
     background-color: var(--color-bg-secondary);
     display: block;
+    overflow-x: hidden;
     width: 90%;
-    height: 100%;
+    box-sizing: border-box;
+    margin: auto;
     overflow: hidden;
 }
 
 section {
-    padding: 3%;
+    /* padding: 3%; */
 }
 
 .app {

@@ -1,14 +1,14 @@
 :root {
-  /* colours */
-  --color-text: white;
-  --color-primary: #418cc3;
-  --color-blue-highlight: #51aced;
-  --color-blue-shadow: #639bc3;
-  --color-secondary: gray;
-  --color-grey: #abb2bf;
-  --color-bg: #282c33;
-  --color-bg-secondary: #2d3035;
+    /* colours */
+    --color-text: white;
+    --color-primary: #418cc3;
+    --color-blue-highlight: #51aced;
+    --color-blue-shadow: #639bc3;
+    --color-secondary: gray;
+    --color-grey: #abb2bf;
+    --color-bg: #282c33;
+    --color-bg-secondary: #2d3035;
 
-  /* Fonts */
-  --font-robot: "Fira Code";
+    /* Fonts */
+    --font-robot: "Fira Code";
 }

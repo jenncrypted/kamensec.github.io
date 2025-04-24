@@ -1,25 +1,39 @@
 .redesContainer {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  /* background-color: red; */
+    position: absolute;
+    top: 0;
+    left: 1.5%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* background-color: red; */
 }
 
 .logosSocialMedia {
-  display: block;
-  cursor: pointer;
+    display: block;
+    cursor: pointer;
 }
 
 .lineContainer {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .lineContainer > hr {
-  border: 1px solid var(--color-grey);
-  height: 250px;
-  width: 1px;
+    border: 1px solid var(--color-grey);
+    height: 250px;
+    width: 1px;
+}
+
+@media screen and (max-width: 830px) {
+    .redesContainer {
+        display: block;
+    }
+
+    .lineContainer {
+        display: none;
+    }
+
+    .logosSocialMedia {
+        display: none;
+    }
 }

@@ -1,5 +1,5 @@
 .aboutContainer {
-    height: 60vh;
+    min-height: 60vh;
     width: 90%;
 }
 
@@ -85,10 +85,11 @@
 } */
 
 @media screen and (max-width: 860px) {
-    .descriptionContainer {
-        font-size: 15px;
+    .aboutContainer {
+        min-height: auto;
+        height: auto;
+        overflow: auto;
     }
-
     .dotImageBackground {
         flex-direction: column;
         display: none;

@@ -7,7 +7,6 @@
     height: 80vh;
     width: 80vw;
     padding-left: 0;
-    padding-top: 1%;
 }
 
 .contentRelativeContainer {
@@ -58,6 +57,11 @@
     gap: 10px;
     font-weight: 500;
     font-size: 16px;
+}
+
+.contactBtn:hover {
+    box-shadow: 0px 0px 30px var(--color-blue-highlight);
+    cursor: pointer;
 }
 
 .scroll-down {
@@ -131,6 +135,10 @@
         width: 50%;
         z-index: 1;
         position: relative;
+        display: none;
+    }
+
+    .scroll-down {
         display: none;
     }
 }

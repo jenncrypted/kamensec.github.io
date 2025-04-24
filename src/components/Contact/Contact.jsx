@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useRef } from "react";
 import styles from "./Contact.module.css";
 import emailjs from "@emailjs/browser";
+import Socials from "../Socials/Socials";
 
 const Contact = () => {
     const ref = useRef();

@@ -24,7 +24,6 @@ const About = () => {
                         test-centric approach to smart contract auditing and
                         protocol security.{" "}
                     </p>
-                    <br />
                     <p>
                         Over the years, I’ve led security assessments for high
                         TVL projects like EigenLayer, Renzo, and RocketPool,
