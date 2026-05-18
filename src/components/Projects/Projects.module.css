@@ -29,6 +29,70 @@
     margin-left: var(--space-4);
 }
 
+/* ===== Tabs ===== */
+.tabs {
+    display: flex;
+    gap: var(--space-1);
+    margin-bottom: var(--space-6);
+    border-bottom: 1px solid var(--color-border);
+    flex-wrap: wrap;
+}
+
+.tab {
+    background: transparent;
+    border: 1px solid transparent;
+    border-bottom: none;
+    color: var(--color-grey);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    padding: var(--space-2) var(--space-4);
+    cursor: pointer;
+    border-radius: var(--radius) var(--radius) 0 0;
+    transition: background var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: -1px;
+    line-height: 1;
+}
+
+.tab:hover {
+    background: rgba(81, 172, 237, 0.06);
+    color: var(--color-text);
+}
+
+.tab:focus-visible {
+    outline: 2px solid var(--color-blue-highlight);
+    outline-offset: 2px;
+}
+
+.hash {
+    color: var(--color-blue-highlight);
+}
+
+.count {
+    font-size: var(--text-xs);
+    background: var(--color-bg-deep);
+    color: var(--color-secondary);
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-border);
+}
+
+.activeTab {
+    background: var(--color-bg-deep);
+    border-color: var(--color-border);
+    color: var(--color-text);
+}
+
+.activeTab .count {
+    color: var(--color-blue-highlight);
+    border-color: var(--color-blue-highlight);
+}
+
+/* ===== Stat block ===== */
 .stats {
     display: flex;
     gap: var(--space-8);
@@ -60,11 +124,39 @@
     margin-top: var(--space-1);
 }
 
+/* ===== Grid ===== */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: var(--space-5);
     text-align: left;
+}
+
+/* ===== Judging placeholder ===== */
+.placeholder {
+    text-align: center;
+    padding: var(--space-16) var(--space-6);
+    background: var(--color-bg-deep);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius);
+}
+
+.phTitle {
+    color: var(--color-text);
+    font-size: var(--text-base);
+    margin-bottom: var(--space-2);
+}
+
+.phTitle span {
+    color: var(--color-blue-highlight);
+}
+
+.phSub {
+    color: var(--color-grey);
+    font-size: var(--text-sm);
+    max-width: 460px;
+    margin: 0 auto;
+    line-height: var(--leading-relaxed);
 }
 
 @media (max-width: 600px) {
@@ -79,5 +171,10 @@
 
     .title::after {
         display: none;
+    }
+
+    .tab {
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--text-xs);
     }
 }

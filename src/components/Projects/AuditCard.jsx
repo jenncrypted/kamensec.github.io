@@ -1,13 +1,13 @@
 import React from "react";
-import styles from "./ProjectCard.module.css";
+import styles from "./AuditCard.module.css";
 
-const ProjectCard = ({ project }) => {
-    const { title, scope, firm, year, tags, stack, source } = project;
+const AuditCard = ({ audit }) => {
+    const { title, scope, firm, year, tags, stack, source } = audit;
 
     return (
         <article className={styles.card}>
             <header className={styles.header}>
-                <span className={styles.prompt}>$</span> audit{" "}
+                <span className={styles.prompt}>$</span>audit{" "}
                 <span className={styles.flag}>--year</span>={year}
             </header>
 
@@ -43,4 +43,4 @@ const ProjectCard = ({ project }) => {
     );
 };
 
-export default ProjectCard;
+export default AuditCard;
