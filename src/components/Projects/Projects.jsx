@@ -1,46 +1,54 @@
-import React, { useRef } from "react";
+import React, { useMemo } from "react";
 import styles from "./Projects.module.css";
 import projects from "../data/projects.json";
 import ProjectCard from "./ProjectCard";
-import Slider from "react-slick";
 
 const Projects = () => {
-  const sliderRef = useRef();
+    const stats = useMemo(() => {
+        const firms = new Set(projects.map((p) => p.firm));
+        const years = projects.map((p) => p.year).filter(Boolean);
+        const yearsSpan = years.length
+            ? `${Math.max(...years) - Math.min(...years) + 1}y+`
+            : "—";
+        return {
+            audits: projects.length,
+            firms: firms.size,
+            experience: yearsSpan,
+        };
+    }, []);
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 796,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-        },
-      },
-    ],
-  };
+    return (
+        <section id="works" className={styles.container}>
+            <h2 className={styles.title}>
+                <span>#</span>projects
+            </h2>
 
-  return (
-    <section id="works" className={styles.container}>
-      <h2 className={styles.title}>
-        <span>#</span>projects
-      </h2>
-      <div className={styles.projectsContainer}>
-        <div className={styles.projects}>
-          {/* <Slider ref={sliderRef} {...settings}> */}
-          {projects.map((project, id) => {
-            return <ProjectCard key={id} id={id} project={project} />;
-          })}
-          {/* </Slider> */}
-        </div>
-      </div>
-    </section>
-  );
+            <div className={styles.stats} aria-label="audit summary">
+                <div className={styles.stat}>
+                    <div className={styles.statNum}>{stats.audits}</div>
+                    <div className={styles.statLabel}>audits</div>
+                </div>
+                <div className={styles.stat}>
+                    <div className={styles.statNum}>{stats.firms}</div>
+                    <div className={styles.statLabel}>firms</div>
+                </div>
+                <div className={styles.stat}>
+                    <div className={styles.statNum}>{stats.experience}</div>
+                    <div className={styles.statLabel}>experience</div>
+                </div>
+                <div className={styles.stat}>
+                    <div className={styles.statNum}>EVM</div>
+                    <div className={styles.statLabel}>specialty</div>
+                </div>
+            </div>
+
+            <div className={styles.grid}>
+                {projects.map((project, id) => (
+                    <ProjectCard key={id} project={project} />
+                ))}
+            </div>
+        </section>
+    );
 };
 
 export default Projects;

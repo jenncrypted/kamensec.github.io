@@ -1,104 +1,155 @@
-[ 
+[
   {
-    "skills": ["Solidity"],
     "title": "Trillion Network",
-    "description": "Cross Chain Contracts",
+    "scope": "Cross Chain Contracts",
+    "firm": "Zellic",
+    "year": 2025,
+    "tags": ["Cross-chain"],
+    "stack": "Solidity · EVM",
     "source": "https://github.com/Zellic/publications/blob/master/Cultured%20-%20Zellic%20Audit%20Report.pdf"
   },
   {
-    "skills": ["Solidity"],
     "title": "Plume Network",
-    "description": "Cultured Smart Contracts",
+    "scope": "Cultured Smart Contracts",
+    "firm": "Zellic",
+    "year": 2024,
+    "tags": ["RWA", "L2"],
+    "stack": "Solidity · EVM",
     "source": "https://github.com/Zellic/publications/blob/master/Cultured%20-%20Zellic%20Audit%20Report.pdf"
-  }, 
+  },
   {
-    "skills": ["Solidity"],
     "title": "Bulla Network",
-    "description": "Bulla Factoring Contracts",
+    "scope": "Bulla Factoring Contracts",
+    "firm": "LPHAC",
+    "year": 2024,
+    "tags": ["Lending", "Factoring"],
+    "stack": "Solidity · EVM",
     "source": "https://github.com/LPHAC/public-reports/blob/main/bulla-1-factoring.pdf"
   },
   {
-  "skills": ["Solidity"],
-  "title": "Facet Protocol",
-  "description": "Facet Bridge",
-  "source": "https://github.com/Zellic/publications/blob/master/Facet%20Bridge%20-%20Zellic%20Audit%20Report.pdf"
+    "title": "Facet Protocol",
+    "scope": "Facet Bridge",
+    "firm": "Zellic",
+    "year": 2024,
+    "tags": ["Bridge", "L2"],
+    "stack": "Solidity · EVM",
+    "source": "https://github.com/Zellic/publications/blob/master/Facet%20Bridge%20-%20Zellic%20Audit%20Report.pdf"
   },
   {
-    "skills": ["Solidity"],
-    "title": "Sanguine Labs, LTD",
-    "description": "Yeet",
+    "title": "Sanguine Labs",
+    "scope": "Yeet",
+    "firm": "Zellic",
+    "year": 2024,
+    "tags": ["Yield"],
+    "stack": "Solidity · EVM",
     "source": "https://github.com/Zellic/publications/blob/master/Yeet%20October%20-%20Zellic%20Audit%20Report.pdf"
   },
   {
-    "skills": ["Solidity"],
-    "title": "MetaLex Labs, Inc",
-    "description": "Metavest contracts",
+    "title": "MetaLex Labs",
+    "scope": "Metavest contracts",
+    "firm": "Zellic",
+    "year": 2024,
+    "tags": ["Token", "Vesting"],
+    "stack": "Solidity · EVM",
     "source": "https://github.com/Zellic/publications/blob/master/Metavest%20-%20Zellic%20Audit%20Report.pdf"
   },
   {
-    "skills": ["Solidity"],
     "title": "Lyra Finance",
-    "description": "TSA Modules",
+    "scope": "TSA Modules",
+    "firm": "Sigma Prime",
+    "year": 2024,
+    "tags": ["Options", "Vaults"],
+    "stack": "Solidity · EVM",
     "source": "https://github.com/sigp/public-audits/blob/master/reports/lyra-finance/v2-matching/review.pdf"
   },
   {
-    "skills": ["Solidity"],
     "title": "Renzo",
-    "description": "Staking Contracts",
+    "scope": "Staking Contracts",
+    "firm": "Sigma Prime",
+    "year": 2024,
+    "tags": ["Restaking"],
+    "stack": "Solidity · EVM",
     "source": "https://github.com/sigp/public-audits/blob/master/reports/renzo/review.pdf"
   },
   {
-    "skills": ["Solidity"],
     "title": "EigenLayer",
-    "description": "M2 Core",
+    "scope": "M2 Core",
+    "firm": "Sigma Prime",
+    "year": 2024,
+    "tags": ["Restaking"],
+    "stack": "Solidity · EVM",
     "source": "https://github.com/sigp/public-audits/blob/master/reports/eigen-layer-3/review.pdf"
   },
   {
-    "skills": ["Solidity"],
     "title": "RocketPool",
-    "description": "Houston Upgrade",
+    "scope": "Houston Upgrade",
+    "firm": "Sigma Prime",
+    "year": 2024,
+    "tags": ["Staking", "DAO"],
+    "stack": "Solidity · EVM",
     "source": "https://github.com/sigp/public-audits/blob/master/reports/rocket-pool/rocket-pool-8-houston-pdao/review.pdf"
   },
   {
-    "skills": ["Solidity"],
     "title": "Lyra Finance",
-    "description": "V2-Core & V2-Matching",
+    "scope": "V2-Core & V2-Matching",
+    "firm": "Sigma Prime",
+    "year": 2023,
+    "tags": ["Options", "AMM"],
+    "stack": "Solidity · EVM",
     "source": "https://github.com/sigp/public-audits/blob/master/reports/lyra-finance/review.pdf"
   },
   {
-    "skills": ["Solidity"],
     "title": "EigenLayer",
-    "description": "Core (diff audit)",
+    "scope": "Core (diff audit)",
+    "firm": "Sigma Prime",
+    "year": 2023,
+    "tags": ["Restaking"],
+    "stack": "Solidity · EVM",
     "source": "https://github.com/sigp/public-audits/blob/master/reports/eigen-layer-2/review.pdf"
   },
   {
-    "skills": ["Solidity"],
     "title": "Satori Sports",
-    "description": "Satori Tokens & Royalties",
+    "scope": "Satori Tokens & Royalties",
+    "firm": "Sigma Prime",
+    "year": 2023,
+    "tags": ["Token", "NFT"],
+    "stack": "Solidity · EVM",
     "source": "https://github.com/sigp/public-audits/blob/master/reports/satori-sports/satori-sports-token-royalties/review.pdf"
   },
   {
-    "skills": ["Solidity"],
     "title": "DXdao",
-    "description": "Carrot Eth & ERC20 Guild",
+    "scope": "Carrot Eth & ERC20 Guild",
+    "firm": "Sigma Prime",
+    "year": 2022,
+    "tags": ["DAO", "Token"],
+    "stack": "Solidity · EVM",
     "source": "https://github.com/sigp/public-audits/blob/master/reports/dxdao/carrot-kpi/review.pdf"
   },
   {
-    "skills": ["Solidity"],
-    "title": "Sushi Wrap",
-    "description": "Bento Box & Staking Contracts",
+    "title": "Sushi",
+    "scope": "Bento Box & Staking Contracts",
+    "firm": "Sigma Prime",
+    "year": 2022,
+    "tags": ["AMM", "DeFi"],
+    "stack": "Solidity · EVM",
     "source": "https://github.com/sigp/public-audits/blob/master/reports/sushi/bentobox-strategies-staking-contract/review.pdf"
   },
   {
-    "skills": ["Solidity"],
     "title": "Chainsafe",
-    "description": " Gossamer",
+    "scope": "Gossamer",
+    "firm": "Sigma Prime",
+    "year": 2022,
+    "tags": ["L1", "Polkadot"],
+    "stack": "Go",
     "source": "https://github.com/sigp/public-audits/blob/master/reports/chainsafe/gossamer/review.pdf"
   },
   {
-    "skills": ["Solidity"],
     "title": "LinkPool",
-    "description": "Chainlink Keeper Contracts",
+    "scope": "Chainlink Keeper Contracts",
+    "firm": "Sigma Prime",
+    "year": 2021,
+    "tags": ["Oracle"],
+    "stack": "Solidity · EVM",
     "source": "https://github.com/sigp/public-audits/blob/master/reports/linkpool/linkpool-2/review.pdf"
   }
 ]

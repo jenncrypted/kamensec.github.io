@@ -1,41 +1,46 @@
 import React from "react";
-import project from "./Projects";
 import styles from "./ProjectCard.module.css";
-import classNames from "classnames";
 
-/* @TODO: Please look over object destructuring, to properly understand what is happening
-when we destructure props drilled down to ProjectCard */
-const ProjectCard = ({
-  id,
-  project: { skills, title, description, source },
-}) => {
-  // const layoutClasses = classNames(styles.gridItem, styles[id]);
+const ProjectCard = ({ project }) => {
+    const { title, scope, firm, year, tags, stack, source } = project;
 
-  console.log({ skills, title, description, source });
-  return (
-    <div className={classNames(styles.gridItem, styles["layout" + id])}>
-      <div className={styles.container}>
-        <div className={styles.skills}>
-          {skills.map((skill, id) => {
-            return (
-              <div key={id} className={styles.skills}>
-                <div className={styles.projectTextPadding}>{skill}</div>
-              </div>
-            );
-          })}
-        </div>
-        <div className={styles.projectTextPadding}>
-          <h3 className={styles.title}>{title}</h3>
-          <p className={styles.description}>{description}</p>
-          <div className={styles.linkMargin}>
-            <a className={styles.github} href={source} target="_blank">
-              Github
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    return (
+        <article className={styles.card}>
+            <header className={styles.header}>
+                <span className={styles.prompt}>$</span> audit{" "}
+                <span className={styles.flag}>--year</span>={year}
+            </header>
+
+            <div className={styles.body}>
+                <h3 className={styles.title}>{title}</h3>
+                <p className={styles.scope}>{scope}</p>
+
+                <dl className={styles.meta}>
+                    <dt>firm</dt>
+                    <dd>{firm}</dd>
+                    <dt>stack</dt>
+                    <dd>{stack}</dd>
+                    {tags && tags.length > 0 && (
+                        <>
+                            <dt>scope</dt>
+                            <dd>{tags.join(" · ")}</dd>
+                        </>
+                    )}
+                </dl>
+            </div>
+
+            <footer className={styles.footer}>
+                <a
+                    href={source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.reportLink}
+                >
+                    view report ↗
+                </a>
+            </footer>
+        </article>
+    );
 };
 
 export default ProjectCard;

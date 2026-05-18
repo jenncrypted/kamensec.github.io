@@ -2,26 +2,23 @@ import React from "react";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
+    const year = new Date().getFullYear();
     return (
-        <section>
-            <hr />
-            <div>
-                <div className={styles.footerContainer}>
-                    <div className={styles.infoName}>Made with love</div>
-                    <div className={styles.contactInfo}>
-                        <a
-                            // className={styles.blueText}
-                            href="mailto:kamensec@proton.me"
-                        >
-                            <div className={styles.blueText}>
-                                jenncrypted.io
-                            </div>
-                        </a>
-                        <br />
-                    </div>
-                </div>
-            </div>
-        </section>
+        <footer className={styles.footer}>
+            <hr className={styles.divider} />
+            <p className={styles.signature}>
+                Made with <span className={styles.heart}>♥</span> by{" "}
+                <a
+                    href="https://jenncrypted.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                >
+                    jenncrypted.io
+                </a>{" "}
+                · © {year}
+            </p>
+        </footer>
     );
 };
 

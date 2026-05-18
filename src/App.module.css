@@ -1,7 +1,6 @@
 @import "./vars.css";
 
 .componentContainer {
-    /* width: 10÷0%; */
     background-color: var(--color-bg-secondary);
     display: block;
     width: 90%;
