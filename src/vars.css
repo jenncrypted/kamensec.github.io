@@ -3,7 +3,7 @@
   --color-text: white;
   --color-text-muted: #6b7280;
   --color-grey: #abb2bf;
-  --color-secondary: gray;
+  --color-secondary: #95989e;  /* bumped from `gray` (#808080) for WCAG AA */
 
   --color-primary: #418cc3;
   --color-blue-highlight: #51aced;
@@ -13,7 +13,7 @@
   --color-success: #98c379;
   --color-warning: #e5c07b;
   --color-error: #ef5350;
-  --color-purple: #c678dd;
+  --color-purple: #d8a3e7;  /* bumped from #c678dd for WCAG AA on bg-secondary */
 
   /* surfaces */
   --color-bg: #282c33;

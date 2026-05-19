@@ -121,6 +121,9 @@ const HeroAnimation = () => {
                     src={"assets/white-rabbit.png"}
                     className={styles.rabbitImage}
                     alt=""
+                    width="500"
+                    height="500"
+                    fetchpriority="high"
                 />
             </div>
         </div>

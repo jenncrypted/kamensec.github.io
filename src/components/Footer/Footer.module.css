@@ -24,12 +24,14 @@
 
 .link {
     color: var(--color-blue-highlight);
-    text-decoration: none;
-    transition: color var(--transition);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(81, 172, 237, 0.4);
+    transition: text-decoration-color var(--transition);
 }
 
 .link:hover,
 .link:focus-visible {
-    text-decoration: underline;
+    text-decoration-color: var(--color-blue-highlight);
     outline: none;
 }

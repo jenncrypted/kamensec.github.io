@@ -61,6 +61,7 @@
 .rabbitImg {
     width: 240px;
     max-width: 60%;
+    height: auto;
     position: relative;
     z-index: 1;
     filter: brightness(0) saturate(100%)

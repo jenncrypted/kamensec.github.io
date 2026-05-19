@@ -13,6 +13,9 @@ const About = () => {
                         src={"assets/white-rabbit.png"}
                         className={styles.rabbitImg}
                         alt=""
+                        width="500"
+                        height="500"
+                        loading="lazy"
                     />
                     <div className={styles.hole}></div>
                 </div>
