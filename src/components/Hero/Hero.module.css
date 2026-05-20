@@ -53,6 +53,12 @@
     50% { opacity: 0; }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .cursor {
+        animation: none;
+    }
+}
+
 .subtitle {
     font-size: var(--text-lg);
     color: var(--color-grey);

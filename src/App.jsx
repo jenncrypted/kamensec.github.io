@@ -10,10 +10,13 @@ import Socials from "./components/Socials/Socials";
 export default function App() {
     return (
         <div className={styles.app}>
+            <a href="#main" className={styles.skipLink}>
+                Skip to content
+            </a>
             <Socials />
             <div className={styles.componentContainer}>
                 <Navbar />
-                <main>
+                <main id="main">
                     <Hero />
                     <Projects />
                     <About />

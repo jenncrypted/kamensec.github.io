@@ -1,14 +1,16 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./HeroAnimation.module.css";
-import { gsap } from "gsap";
+
+const easeInOutSine = (t) => -(Math.cos(Math.PI * t) - 1) / 2;
 
 const HeroAnimation = () => {
     const holeRef = useRef(null);
     const rabbitRef = useRef(null);
 
     useEffect(() => {
-        const rabbitElement = rabbitRef.current;
-        if (!rabbitElement) return;
+        const hole = holeRef.current;
+        const rabbit = rabbitRef.current;
+        if (!hole || !rabbit) return;
 
         const isTouch = window.matchMedia(
             "(hover: none) and (pointer: coarse)"
@@ -17,85 +19,139 @@ const HeroAnimation = () => {
             "(prefers-reduced-motion: reduce)"
         ).matches;
 
-        // hole size must match CSS (275 desktop / 220 mobile)
         const holeSize = isTouch ? 220 : 275;
         const halfHole = holeSize / 2;
 
-        const rabbitRect = rabbitElement.getBoundingClientRect();
-        const rabbitX =
-            rabbitRect.left + rabbitRect.width / 2 - halfHole;
-        const rabbitY =
-            rabbitRect.top + rabbitRect.height / 2 - halfHole;
+        const rabbitRect = rabbit.getBoundingClientRect();
+        const rabbitX = rabbitRect.left + rabbitRect.width / 2 - halfHole;
+        const rabbitY = rabbitRect.top + rabbitRect.height / 2 - halfHole;
 
-        let orbitTimeline = null;
+        let currentX = rabbitX;
+        let currentY = rabbitY;
+        let targetX = rabbitX;
+        let targetY = rabbitY;
+        let rafId = null;
+        let orbitAborted = false;
 
-        if (isTouch && !reducedMotion) {
-            // Mobile: hole orbits the screen, then settles on the rabbit
+        const applyTransform = () => {
+            hole.style.transform = `translate(${currentX}px, ${currentY}px)`;
+        };
+
+        applyTransform();
+
+        // Smooth follow loop (lerp) — used for mouse / touch input
+        const followLerp = () => {
+            const dx = targetX - currentX;
+            const dy = targetY - currentY;
+
+            if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) {
+                currentX = targetX;
+                currentY = targetY;
+                applyTransform();
+                rafId = null;
+                return;
+            }
+
+            currentX += dx * 0.18;
+            currentY += dy * 0.18;
+            applyTransform();
+            rafId = requestAnimationFrame(followLerp);
+        };
+
+        const setTarget = (x, y) => {
+            targetX = x;
+            targetY = y;
+            if (rafId === null) {
+                rafId = requestAnimationFrame(followLerp);
+            }
+        };
+
+        // Timed animate-to (used for the mobile orbit segments)
+        const animateTo = (toX, toY, duration) =>
+            new Promise((resolve) => {
+                const fromX = currentX;
+                const fromY = currentY;
+                const start = performance.now();
+
+                const tick = (now) => {
+                    if (orbitAborted) {
+                        resolve();
+                        return;
+                    }
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = easeInOutSine(progress);
+
+                    currentX = fromX + (toX - fromX) * eased;
+                    currentY = fromY + (toY - fromY) * eased;
+                    applyTransform();
+
+                    if (progress < 1) {
+                        requestAnimationFrame(tick);
+                    } else {
+                        targetX = currentX;
+                        targetY = currentY;
+                        resolve();
+                    }
+                };
+
+                requestAnimationFrame(tick);
+            });
+
+        const runOrbit = async () => {
             const w = window.innerWidth;
             const h = window.innerHeight;
-            const offscreenMargin = 80; // keeps a piece of the hole on screen
+            const offscreenMargin = 80;
 
-            gsap.set(holeRef.current, {
-                x: -offscreenMargin,
-                y: 60,
-            });
+            currentX = -offscreenMargin;
+            currentY = 60;
+            applyTransform();
 
-            orbitTimeline = gsap.timeline();
-            orbitTimeline
-                .to(holeRef.current, {
-                    x: w - holeSize + offscreenMargin,
-                    y: 60,
-                    duration: 2.4,
-                    ease: "sine.inOut",
-                })
-                .to(holeRef.current, {
-                    x: w - holeSize + offscreenMargin,
-                    y: h * 0.55,
-                    duration: 1.8,
-                    ease: "sine.inOut",
-                })
-                .to(holeRef.current, {
-                    x: -offscreenMargin,
-                    y: h * 0.55,
-                    duration: 1.8,
-                    ease: "sine.inOut",
-                })
-                .to(holeRef.current, {
-                    x: rabbitX,
-                    y: rabbitY,
-                    duration: 1.8,
-                    ease: "power2.out",
-                });
-        } else {
-            // Desktop (or reduced-motion): centered on the rabbit
-            gsap.set(holeRef.current, { x: rabbitX, y: rabbitY });
+            const points = [
+                { x: w - holeSize + offscreenMargin, y: 60, dur: 2400 },
+                { x: w - holeSize + offscreenMargin, y: h * 0.55, dur: 1800 },
+                { x: -offscreenMargin, y: h * 0.55, dur: 1800 },
+                { x: rabbitX, y: rabbitY, dur: 1800 },
+            ];
+
+            for (const p of points) {
+                if (orbitAborted) return;
+                await animateTo(p.x, p.y, p.dur);
+            }
+        };
+
+        if (isTouch && !reducedMotion) {
+            runOrbit();
         }
 
+        // ===== Event handlers =====
         const handleMouseMove = (event) => {
-            gsap.to(holeRef.current, {
-                x: event.clientX - halfHole,
-                y: event.clientY - halfHole,
-                duration: 0.4,
-                overwrite: true,
-            });
+            setTarget(event.clientX - halfHole, event.clientY - halfHole);
+        };
+
+        const handleTouchStart = (event) => {
+            // Kill the orbit instantly on first touch
+            orbitAborted = true;
+            const touch = event.touches[0];
+            if (touch) {
+                setTarget(
+                    touch.clientX - halfHole,
+                    touch.clientY - halfHole
+                );
+            }
         };
 
         const handleTouchMove = (event) => {
-            if (orbitTimeline) {
-                orbitTimeline.kill();
-                orbitTimeline = null;
-            }
+            orbitAborted = true;
             const touch = event.touches[0];
             if (!touch) return;
-            gsap.to(holeRef.current, {
-                x: touch.clientX - halfHole,
-                y: touch.clientY - halfHole,
-                duration: 0.3,
-                overwrite: true,
-            });
+            setTarget(touch.clientX - halfHole, touch.clientY - halfHole);
         };
 
         if (isTouch) {
+            window.addEventListener("touchstart", handleTouchStart, {
+                passive: true,
+            });
             window.addEventListener("touchmove", handleTouchMove, {
                 passive: true,
             });
@@ -106,7 +162,9 @@ const HeroAnimation = () => {
         return () => {
             window.removeEventListener("mousemove", handleMouseMove);
             window.removeEventListener("touchmove", handleTouchMove);
-            if (orbitTimeline) orbitTimeline.kill();
+            window.removeEventListener("touchstart", handleTouchStart);
+            orbitAborted = true;
+            if (rafId !== null) cancelAnimationFrame(rafId);
         };
     }, []);
 

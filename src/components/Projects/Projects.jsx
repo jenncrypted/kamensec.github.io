@@ -128,12 +128,40 @@ const Projects = () => {
 
                 {activeTab === "judging" && (
                     <div className={styles.placeholder}>
-                        <p className={styles.phTitle}>
-                            <span>// </span>coming soon
-                        </p>
-                        <p className={styles.phSub}>
-                            Judging history will appear here as it's added.
-                        </p>
+                        <pre className={styles.terminal}>
+                            <code>
+                                <span className={styles.tPrompt}>$</span>{" "}
+                                cat judging.log{"\n"}
+                                <span className={styles.tComment}>
+                                    {"// status: "}
+                                </span>
+                                <span className={styles.tPending}>
+                                    pending
+                                </span>
+                                {"\n\n"}
+                                <span className={styles.tDim}>
+                                    awaiting entries for:
+                                </span>
+                                {"\n"}
+                                <span className={styles.tBullet}>
+                                    {"  ● "}
+                                </span>
+                                contest reviews{"\n"}
+                                <span className={styles.tBullet}>
+                                    {"  ● "}
+                                </span>
+                                severity assessments{"\n"}
+                                <span className={styles.tBullet}>
+                                    {"  ● "}
+                                </span>
+                                verdicts & rationale{"\n\n"}
+                                <span className={styles.tPrompt}>$</span>{" "}
+                                <span
+                                    className={styles.tCursor}
+                                    aria-hidden="true"
+                                ></span>
+                            </code>
+                        </pre>
                     </div>
                 )}
             </div>

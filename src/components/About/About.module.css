@@ -96,6 +96,12 @@
     50%      { width: 340px; height: 340px; }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .hole {
+        animation: none;
+    }
+}
+
 @media screen and (max-width: 860px) {
     .contentContainer {
         grid-template-columns: 1fr;
