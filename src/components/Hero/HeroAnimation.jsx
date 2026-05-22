@@ -6,6 +6,7 @@ const easeInOutSine = (t) => -(Math.cos(Math.PI * t) - 1) / 2;
 const HeroAnimation = () => {
     const holeRef = useRef(null);
     const rabbitRef = useRef(null);
+    const pulseRef = useRef(null);
 
     useEffect(() => {
         const hole = holeRef.current;
@@ -129,16 +130,26 @@ const HeroAnimation = () => {
             setTarget(event.clientX - halfHole, event.clientY - halfHole);
         };
 
-        const handleTouchStart = (event) => {
-            // Kill the orbit instantly on first touch
-            orbitAborted = true;
-            const touch = event.touches[0];
-            if (touch) {
-                setTarget(
-                    touch.clientX - halfHole,
-                    touch.clientY - halfHole
-                );
+        // Desktop only: mouseenter on rabbit -> snap + pulse
+        const handleRabbitMouseEnter = () => {
+            const rect = rabbit.getBoundingClientRect();
+            const snapX = rect.left + rect.width / 2 - halfHole;
+            const snapY = rect.top + rect.height / 2 - halfHole;
+            setTarget(snapX, snapY);
+
+            if (pulseRef.current) {
+                // Re-trigger the pulse animation by removing + re-adding the class
+                pulseRef.current.classList.remove(styles.snapPulseActive);
+                // force reflow so the animation restarts
+                void pulseRef.current.offsetWidth;
+                pulseRef.current.classList.add(styles.snapPulseActive);
             }
+        };
+
+        // Mobile: touchstart only aborts the orbit, does NOT move the hole
+        // (drag-only mode — touchmove handles the follow)
+        const handleTouchStart = () => {
+            orbitAborted = true;
         };
 
         const handleTouchMove = (event) => {
@@ -157,12 +168,14 @@ const HeroAnimation = () => {
             });
         } else {
             window.addEventListener("mousemove", handleMouseMove);
+            rabbit.addEventListener("mouseenter", handleRabbitMouseEnter);
         }
 
         return () => {
             window.removeEventListener("mousemove", handleMouseMove);
             window.removeEventListener("touchmove", handleTouchMove);
             window.removeEventListener("touchstart", handleTouchStart);
+            rabbit.removeEventListener("mouseenter", handleRabbitMouseEnter);
             orbitAborted = true;
             if (rafId !== null) cancelAnimationFrame(rafId);
         };
@@ -183,6 +196,11 @@ const HeroAnimation = () => {
                     height="500"
                     fetchPriority="high"
                 />
+                <div
+                    ref={pulseRef}
+                    className={styles.snapPulse}
+                    aria-hidden="true"
+                ></div>
             </div>
         </div>
     );
