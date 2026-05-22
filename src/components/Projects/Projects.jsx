@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import styles from "./Projects.module.css";
 import audits from "../data/projects.json";
 import contests from "../data/contests.json";

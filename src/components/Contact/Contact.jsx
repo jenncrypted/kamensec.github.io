@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "./Contact.module.css";
 
@@ -143,7 +143,7 @@ const Contact = () => {
 
                         {status === STATUS.success && (
                             <p className={styles.success} role="status">
-                                ✓ message sent — i'll reply soon
+                                ✓ message sent — I&apos;ll reply soon
                             </p>
                         )}
                         {status === STATUS.error && (

@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./AuditCard.module.css";
 
 const AuditCard = ({ audit }) => {

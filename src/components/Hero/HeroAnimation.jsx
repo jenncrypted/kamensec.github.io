@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./HeroAnimation.module.css";
 
 const easeInOutSine = (t) => -(Math.cos(Math.PI * t) - 1) / 2;
@@ -181,7 +181,7 @@ const HeroAnimation = () => {
                     alt=""
                     width="500"
                     height="500"
-                    fetchpriority="high"
+                    fetchPriority="high"
                 />
             </div>
         </div>

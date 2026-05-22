@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Socials.module.css";
 import Github from "./Github.svg";
 import Twitter from "./Twitter.svg";
