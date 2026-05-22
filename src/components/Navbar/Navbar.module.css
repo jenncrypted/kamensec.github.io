@@ -1,86 +1,115 @@
 @import "../../vars.css";
 
 .navbar {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 2;
-  width: 100%;
-  padding: 2%;
-}
-
-.title {
-  font-size: 19px;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--color-text);
-  position: absolute;
-  margin-left: 7%;
-  margin-top: 0.3%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 2;
+    width: 100%;
+    padding: var(--space-4) var(--space-6);
 }
 
 .menu {
-  display: flex;
+    display: flex;
 }
 
 .menuItems {
-  display: flex;
-  gap: 50px;
-  list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menuItems li {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-blue-highlight);
+    font-size: var(--text-sm);
+    line-height: 1;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition);
+}
+
+.menuItems li:hover {
+    background-color: rgba(81, 172, 237, 0.08);
 }
 
 .menuItems a {
-  font-size: 16px;
-  color: var(--color-grey);
-  text-decoration: none;
+    color: var(--color-grey);
+    text-decoration: none;
+    margin-left: 2px;
+    transition: color var(--transition);
 }
 
-.menuItems li::first-letter {
-  color: var(--color-blue-highlight);
+.menuItems li:hover a {
+    color: var(--color-text);
+}
+
+.activeItem {
+    background-color: rgba(81, 172, 237, 0.12);
+}
+
+.activeItem a {
+    color: var(--color-text);
 }
 
 .menuBtn {
-  display: none;
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+    padding: var(--space-1);
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition);
+}
+
+.menuBtn:hover {
+    background-color: rgba(81, 172, 237, 0.1);
+}
+
+.menuBtn:focus-visible {
+    outline: 2px solid var(--color-blue-highlight);
+    outline-offset: 2px;
 }
 
 @media screen and (max-width: 830px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    .navbar {
+        padding: var(--space-4);
+    }
 
-  .menu {
-    position: absolute;
-    right: 0;
-    margin-right: 10%;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 11px;
-    z-index: 3;
-  }
+    .menu {
+        position: relative;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: var(--space-3);
+    }
 
-  .menuBtn {
-    display: block;
-    cursor: pointer;
-    width: 24px;
-    height: 24px;
-  }
+    .menuBtn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 4;
+    }
 
-  .menuItems {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    border-radius: 10px;
-    /* background: var(--color-bg); */
-    padding: 24px 33px;
-    box-shadow: 0 0 4px 0;
-    color: white;
-  }
+    .menuItems {
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: var(--space-2);
+        background: var(--color-bg-deep);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        padding: var(--space-4) var(--space-5);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        min-width: 180px;
+    }
 
-  .menuOpen {
-    display: flex;
-    z-index: 1;
-  }
+    .menuOpen {
+        display: flex;
+    }
 }

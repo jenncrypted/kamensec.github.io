@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./About.module.css";
 
 const About = () => {
@@ -8,12 +7,16 @@ const About = () => {
                 <span>#</span>about-me
             </h2>
             <div className={styles.contentContainer}>
-                <div className={styles.aboutHackerWithDots}>
+                <div className={styles.rabbitFrame} aria-hidden="true">
                     <img
-                        src={"assets/hooded-hacker-2.png"}
-                        className={styles.heroImg}
-                        alt="Hacker"
+                        src={"assets/white-rabbit.png"}
+                        className={styles.rabbitImg}
+                        alt=""
+                        width="500"
+                        height="500"
+                        loading="lazy"
                     />
+                    <div className={styles.hole}></div>
                 </div>
                 <div className={styles.descriptionContainer}>
                     <p>
@@ -22,9 +25,8 @@ const About = () => {
                         With a background in both traditional Web2 security and
                         advanced blockchain ecosystems, I bring a rigorous,
                         test-centric approach to smart contract auditing and
-                        protocol security.{" "}
+                        protocol security.
                     </p>
-                    <br />
                     <p>
                         Over the years, I’ve led security assessments for high
                         TVL projects like EigenLayer, Renzo, and RocketPool,

@@ -6,18 +6,24 @@ import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import Socials from "./components/Socials/Socials";
+
 export default function App() {
-  return (
-    <div className={styles.app}>
-      <Socials />
-      <div className={styles.componentContainer}>
-        <Navbar />
-        <Hero />
-        <Projects />
-        <About />
-        <Contact />
-        <Footer />
-      </div>
-    </div>
-  );
+    return (
+        <div className={styles.app}>
+            <a href="#main" className={styles.skipLink}>
+                Skip to content
+            </a>
+            <Socials />
+            <div className={styles.componentContainer}>
+                <Navbar />
+                <main id="main">
+                    <Hero />
+                    <Projects />
+                    <About />
+                    <Contact />
+                </main>
+                <Footer />
+            </div>
+        </div>
+    );
 }

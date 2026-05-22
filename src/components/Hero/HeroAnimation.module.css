@@ -8,8 +8,9 @@
     left: 0;
     top: -100%;
     z-index: 2;
-    background: #060028;
+    background: var(--color-hero-bg);
 }
+
 .wall {
     position: absolute;
     height: 100%;
@@ -17,9 +18,9 @@
     top: 0%;
     left: 0%;
     z-index: 5;
-    /* background-color: var(--color-bg-secondary); */
     overflow: hidden;
 }
+
 .hole {
     position: relative;
     box-shadow: 0 0 0 500000px var(--color-bg-secondary);
@@ -29,64 +30,61 @@
     top: -20%;
     left: -7%;
 }
+
 .rabbitContainer {
     position: absolute;
     top: 10%;
     left: 60%;
     z-index: 3;
 }
+
 .rabbitImage {
     width: 350px;
+    height: auto;
 }
 
-/* .heroLines {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: -1;
-} */
-/* 
-.lineImg {
-  z-index: 50;
-  width: 170px;
+/* Pulse ring that fires on mouseenter (desktop only) */
+.snapPulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    border: 2px solid var(--color-blue-highlight);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 4;
 }
 
-.dotImage {
-  position: absolute;
-  left: 70%;
-  top: 50%;
-  width: 25%;
-} */
+.snapPulseActive {
+    animation: snap-pulse 0.6s ease-out;
+}
 
-/* .relativeContainer {
-  position: relative;
-  height: 100%;
-  width: 100%;
-} */
+@keyframes snap-pulse {
+    0%   { width: 0;     height: 0;     opacity: 1; border-width: 3px; }
+    100% { width: 420px; height: 420px; opacity: 0; border-width: 1px; }
+}
 
-/* Multi Screen Adjustments */
+@media (prefers-reduced-motion: reduce) {
+    .snapPulseActive { animation: none; }
+}
+
+/* Mobile — rabbit + smaller hole; rabbit visible so the orbit reveals it */
 @media screen and (max-width: 830px) {
-    .container {
-        flex-direction: column-reverse;
+    .hole {
+        height: 220px;
+        width: 220px;
     }
 
-    .content {
-        align-items: center;
-    }
-
-    .callToAction {
-        flex-direction: column;
-    }
-
-    .hackerWithLinesAndDotsContainer > img {
-        flex-direction: column;
-        display: none;
+    .rabbitContainer {
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .rabbitImage {
-        width: 50%;
-        z-index: 1;
-        position: relative;
-        display: none;
+        width: 200px;
     }
 }

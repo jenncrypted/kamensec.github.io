@@ -1,102 +1,136 @@
+@import "../../vars.css";
+
 .aboutContainer {
-    height: 60vh;
-    width: 90%;
+    width: 100%;
+    padding: var(--space-12) var(--space-6);
 }
 
 .title {
-    width: 174px;
-    height: 42px;
     color: var(--color-text);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-8);
+    position: relative;
+    display: inline-block;
+    padding-right: var(--space-4);
 }
 
 .title > span {
     color: var(--color-blue-highlight);
 }
 
-.contentContainer {
-    display: flex;
-    /* height: 70vh; */
-    /* flex-direction: column; */
-    align-items: center;
-    justify-content: space-between;
-    color: var(--color-text);
-    z-index: 1;
-    margin-left: 8%;
-}
-
 .title::after {
     content: "";
     position: absolute;
-    width: 450px;
+    width: 240px;
     height: 1px;
     background-color: var(--color-primary);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-    border: 0;
+    top: 50%;
+    margin-left: var(--space-4);
+}
+
+.contentContainer {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-12);
+    align-items: center;
+    color: var(--color-text);
 }
 
 .descriptionContainer {
-    padding-top: 30px;
-    justify-content: center;
-    width: 70%;
-    text-align: justify;
-    word-spacing: 1px;
-    line-height: 1.8em;
     color: var(--color-grey);
+    line-height: var(--leading-relaxed);
+    font-size: var(--text-sm);
 }
 
-.descriptionAbout {
-    color: var(--color-grey);
+.descriptionContainer p {
+    margin-bottom: var(--space-3);
 }
 
-.aboutHackerWithDots {
+.rabbitFrame {
     position: relative;
-    padding: 4%;
+    height: 380px;
+    background: var(--color-bg-deep);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.heroImg {
+.rabbitImg {
+    width: 240px;
+    max-width: 60%;
+    height: auto;
+    position: relative;
     z-index: 1;
-    width: 300px;
+    filter: brightness(0) saturate(100%)
+        drop-shadow(0 0 30px rgba(81, 172, 237, 0.7))
+        drop-shadow(0 0 60px rgba(81, 172, 237, 0.35));
 }
-/* 
-.dotsBackground {
+
+.hole {
     position: absolute;
-    left: -5%;
-    top: 20%;
-    z-index: -1;
-} */
-/* 
-.dotImageBackground {
-  z-index: 50;
-  width: 170px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 9999px var(--color-bg-deep);
+    z-index: 2;
+    pointer-events: none;
+    animation: hole-pulse 4s ease-in-out infinite;
 }
 
-.dotImageForeground {
-  z-index: 50;
-  width: 170px;
+.hole::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: 50%;
+    border: 1px solid rgba(81, 172, 237, 0.3);
 }
 
-.dotsForeground {
-  position: absolute;
-  left: 70%;
-  top: 50%;
-  width: 10%;
-} */
+@keyframes hole-pulse {
+    0%, 100% { width: 320px; height: 320px; }
+    50%      { width: 340px; height: 340px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hole {
+        animation: none;
+    }
+}
 
 @media screen and (max-width: 860px) {
+    .contentContainer {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .rabbitFrame {
+        height: 300px;
+    }
+
+    .rabbitImg {
+        width: 180px;
+    }
+
+    .hole {
+        width: 240px;
+        height: 240px;
+    }
+
+    @keyframes hole-pulse {
+        0%, 100% { width: 240px; height: 240px; }
+        50%      { width: 260px; height: 260px; }
+    }
+
     .descriptionContainer {
-        font-size: 15px;
+        font-size: var(--text-sm);
     }
 
-    .dotImageBackground {
-        flex-direction: column;
-        display: none;
-    }
-
-    .heroImg {
-        z-index: 1;
-        position: relative;
+    .title::after {
         display: none;
     }
 }
