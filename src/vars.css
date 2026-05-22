@@ -19,7 +19,11 @@
   --color-bg: #282c33;
   --color-bg-secondary: #2d3035;
   --color-bg-deep: #1e2127;
+  --color-bg-darkest: #16181d;  /* terminal/card headers */
   --color-border: #3a3f47;
+
+  /* hero-specific deep navy (rabbit hole background) */
+  --color-hero-bg: #060028;
 
   /* ===== Typography ===== */
   --font-mono: "Fira Code", "JetBrains Mono", ui-monospace, SFMono-Regular,

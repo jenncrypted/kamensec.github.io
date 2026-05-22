@@ -8,7 +8,7 @@
     left: 0;
     top: -100%;
     z-index: 2;
-    background: #060028;
+    background: var(--color-hero-bg);
 }
 
 .wall {
